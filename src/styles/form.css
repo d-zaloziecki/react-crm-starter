@@ -1,0 +1,33 @@
+.formInput {
+    display: inline-block;
+    border: 0.5px solid rgb(184, 177, 177);
+    padding:10px;
+    border-radius: 7px;
+    background-color: rgb(238, 229, 229);
+}
+
+.form {
+    padding: 20px;
+    text-align: left;
+}
+
+label{
+    display: inline-block;
+    clear: left;
+    width: 100px;
+    text-align: left;
+}
+
+.inputDiv{
+    padding: 5px;
+}
+
+button{
+    padding:10px;
+    border-radius: 15px;
+    background-color: rgba(255, 206, 47, 0.63);
+    border: none;
+}
+.Search {
+    padding: 20px;
+}

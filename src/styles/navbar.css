@@ -1,0 +1,19 @@
+a{
+    padding: 15px;
+    color:white;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: rgba(88, 80, 80, 0.541)
+}
+
+a:active {
+    background-color: rgba(31, 47, 100, 0.685)
+}
+
+.Navbar{
+    padding: 15px;
+    background-color: black;
+    text-align-last: left;
+}
