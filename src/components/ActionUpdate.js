@@ -22,7 +22,7 @@ class ActionUpdate extends Component {
         return (
             <div id="searchFinds">
                 {this.props.clients
-                    .map(c => { if (c.name.toLowerCase().includes(this.state.searchInput)) return (<Client key={c._id} client={c} update={null} chooseClient={this.chooseClient} />) })}
+                    .map(c => { if (c.name.toLowerCase().includes(this.state.searchInput.toLowerCase())) return (<Client key={c._id} client={c} update={null} chooseClient={this.chooseClient} />) })}
             </div>
         )
     }
