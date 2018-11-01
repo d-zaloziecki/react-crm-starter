@@ -4,6 +4,7 @@
     padding:10px;
     border-radius: 7px;
     background-color: rgb(238, 229, 229);
+    width:30%;
 }
 
 .form {
@@ -14,7 +15,7 @@
 label{
     display: inline-block;
     clear: left;
-    width: 100px;
+    width: 200px;
     text-align: left;
 }
 
@@ -22,12 +23,22 @@ label{
     padding: 5px;
 }
 
-button{
+.updateAddBtn{
+    margin: 10px;
     padding:10px;
     border-radius: 15px;
     background-color: rgba(255, 206, 47, 0.63);
     border: none;
 }
+
+.exitBtn{
+    padding:7px;
+    border-radius: 50%;
+    background-color: rgba(248, 6, 6, 0.719);
+    border: none;
+    float: right;
+}
+
 .Search {
     padding: 20px;
 }

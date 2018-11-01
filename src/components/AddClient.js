@@ -45,7 +45,7 @@ class AddClient extends Component {
                 <div className="inputDiv">
                 {/*Sold <input type="text" className="formInput" name="sold" value={this.state.sold} onChange={this.inputHandler} /> */}
                 </div>
-                <button onClick={this.addClient}>ADD NEW CLIENT</button>
+                <button className="updateAddBtn" onClick={this.addClient}>ADD NEW CLIENT</button>
             </div>
         );
     }

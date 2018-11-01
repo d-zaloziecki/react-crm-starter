@@ -12,7 +12,7 @@ class Search extends Component {
 
     inputHandler = (e) => {
         let val = e.target.value;
-        this.setState({ [e.target.name]: val }, () => {console.log(this.state)})
+        this.setState({ [e.target.name]: val }, () => this.props.setSearchInp(this.state.search, this.state.searchBy))
     }
 
     render() {
@@ -22,13 +22,14 @@ class Search extends Component {
                     <input type="text" placeholder="search" className="formInput" name="search" value={this.state.search} onChange={this.inputHandler} />
                 </span>
                 <span className="inputdiv"  >
-                    <select name="searchBy" className="formInput" value={this.state.searchBy} onChange={this.inputHandler}>
+                {this.props.searchOptions ? (<select name="searchBy" className="formInput" value={this.state.searchBy} onChange={this.inputHandler}>
                         <option value="name">Name</option>
-                        <option value="surname">Surname</option>
                         <option value="country">Country</option>
                         <option value="owner">Owner</option>
+                        <option value="email">Email</option>
                         {/* <option value="sold">Sold</option> */}
-                    </select>
+                    </select>) : null}
+                    
                 </span>
             </div>
         );
