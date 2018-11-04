@@ -20,6 +20,20 @@ class AddClient extends Component {
         this.setState({ [e.target.name] : val})
     }
 
+    addClient = () => {
+        let newClient ={ 
+            name: this.state.fName + " " + this.state.lName,
+            email: this.state.email,
+            firstContact: new Date(),
+            emailType: this.state.emailType,
+            sold: this.state.sold,
+            owner: this.state.owner,
+            country: this.state.country
+        }
+        this.props.addClient(newClient)
+        this.setState({fName: "", lName:"", email:"", firstContact:"", emailType:"", owner:"", country:"", sold: false})
+    }
+
     render() {
         return (
             <div className="form">

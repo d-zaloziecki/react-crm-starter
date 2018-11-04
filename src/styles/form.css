@@ -4,7 +4,6 @@
     padding:10px;
     border-radius: 7px;
     background-color: rgb(238, 229, 229);
-    width:30%;
 }
 
 .form {
@@ -41,4 +40,5 @@ label{
 
 .Search {
     padding: 20px;
+    display: inline-block;
 }

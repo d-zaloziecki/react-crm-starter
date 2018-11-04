@@ -8,7 +8,7 @@ class Action extends Component {
             <div className="Action">
                 <ActionUpdate clients={this.props.clients} />
                 <hr/>
-                <AddClient />
+                <AddClient addClient={this.props.addClient} />
             </div>
         );
     }

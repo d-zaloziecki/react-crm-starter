@@ -25,3 +25,16 @@
     width: 20px;
     padding:5px;
 }
+
+.navClients{
+    float: right;
+    padding:10px;
+}
+
+.navBtn{
+    margin: 5px;
+    padding:10px;
+    border-radius: 15px;
+    background-color: rgba(255, 206, 47, 0.63);
+    border: none;
+}

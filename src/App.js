@@ -10,7 +10,7 @@ import Axios from 'axios';
 class App extends Component {
   constructor() {
     super();
-    this.state={
+    this.state = {
       clients: []
     }
   }
@@ -24,15 +24,20 @@ class App extends Component {
   }
 
   addClient = (client) => {
-    let clients = [...this.state.clients]
-    clients.push(client);
+    Axios.post('http://localhost:8000/clients', client).then((data) => {
+      this.setState({ clients: data.data }, () => alert("Clients saved successfully"))
+    })
+  }
 
-    this.setState({clients: clients})
+  deleteClient = (id) => {
+    Axios.delete('http://localhost:8000/clients/' + id).then((data) => {
+      this.setState({ clients: data.data }, () => alert("Clients Deleted successfully"))
+    })
   }
 
   componentDidMount = () => {
-    Axios.get('http://localhost:8000/clients').then((data)=>{
-    this.setState({clients: data.data});
+    Axios.get('http://localhost:8000/clients').then((data) => {
+      this.setState({ clients: data.data });
     })
   }
 
@@ -41,7 +46,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Navbar />
-          <Route exact path="/clients" render={() => <Clients clients={this.state.clients} update={this.update} />} />
+          <Route exact path="/clients" render={() => <Clients clients={this.state.clients} update={this.update} deleteClient={this.deleteClient} />} />
           <Route exact path="/action" render={() => <Action clients={this.state.clients} addClient={this.addClient} />} />
           <Route exact path="/analytics" render={() => <Analytics />} />
         </div>

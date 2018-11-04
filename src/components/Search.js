@@ -22,14 +22,14 @@ class Search extends Component {
                     <input type="text" placeholder="search" className="formInput" name="search" value={this.state.search} onChange={this.inputHandler} />
                 </span>
                 <span className="inputdiv"  >
-                {this.props.searchOptions ? (<select name="searchBy" className="formInput" value={this.state.searchBy} onChange={this.inputHandler}>
+                    {this.props.searchOptions ? (<select name="searchBy" className="formInput" value={this.state.searchBy} onChange={this.inputHandler}>
                         <option value="name">Name</option>
                         <option value="country">Country</option>
                         <option value="owner">Owner</option>
                         <option value="email">Email</option>
                         {/* <option value="sold">Sold</option> */}
                     </select>) : null}
-                    
+
                 </span>
             </div>
         );

@@ -20,10 +20,9 @@ class Client extends Component {
     }
 
     chooseClient = () =>{
-        if(!this.props.chooseClient){
-            return
+        if(this.props.chooseClient){
+            this.props.chooseClient(this.props.client);
         }
-        this.props.chooseClient(this.props.client)
     }
 
     render() {
@@ -32,7 +31,7 @@ class Client extends Component {
         let firstContact = client.firstContact.slice(0, 10)
 
         return (
-            <div className="Client" onClick={this.chooseClient}>
+            <div className="Client">
                 <div className="row">
                     <div className="col">{name[0]}</div>
                     <div className="col">{name[1]}</div>
@@ -41,11 +40,11 @@ class Client extends Component {
                     <div className="col emailType">{client.emailType ? client.emailType : "-"}</div>
                     <div className="col sold">{client.sold ? "+" : "-"}</div>
                     <div className="col">{client.owner}</div>
-                    {!this.props.update ? null : <img className="update" onClick={this.UpdateClient} alt='update' src="https://cdn3.iconfinder.com/data/icons/web-document-icons/512/Edit_Document-512.png" />}
+                    {!this.props.update ? <img className="update" onClick={this.chooseClient} alt='update' src="https://cdn3.iconfinder.com/data/icons/web-document-icons/512/Edit_Document-512.png" /> : <img className="update" onClick={this.UpdateClient} alt='update' src="https://cdn3.iconfinder.com/data/icons/web-document-icons/512/Edit_Document-512.png" />}
                     
                 </div>
 
-                {this.state.update ? <UpdateClient client={client} exitUpdate={this.exitUpdate} update={this.props.update} /> : null}
+                {this.state.update ? <UpdateClient client={client} exitUpdate={this.exitUpdate} update={this.props.update} deleteClient={this.props.deleteClient} /> : null}
             </div>
         );
     }

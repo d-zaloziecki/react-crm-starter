@@ -33,6 +33,10 @@ class UpdateClient extends Component {
     this.props.exitUpdate()
   }
 
+  deleteClient = () =>{
+    this.props.deleteClient(this.props.client._id)
+  }
+
   render() {
     return (
       <div className="form">
@@ -50,6 +54,7 @@ class UpdateClient extends Component {
         <div className="inputDiv">
           <label>Email type:</label> <input type="text" className="formInput" name="emailType" value={this.state.emailType} onChange={this.inputHandler} />
         </div>
+        <button className="exitBtn" onClick={this.deleteClient}>DELETE THIS CLIENT!</button>
         <button className="updateAddBtn" onClick={this.update}>UPDATE</button>
       </div>
     );
