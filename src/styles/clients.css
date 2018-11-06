@@ -38,3 +38,8 @@
     background-color: rgba(255, 206, 47, 0.63);
     border: none;
 }
+
+.example{
+    width: 100px;
+    height: 100px;
+}

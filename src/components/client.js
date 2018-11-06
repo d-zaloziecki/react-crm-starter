@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../styles/clients.css'
 import UpdateClient from './UpdateClient';
 
-
 class Client extends Component {
     constructor() {
         super();
@@ -40,11 +39,11 @@ class Client extends Component {
                     <div className="col emailType">{client.emailType ? client.emailType : "-"}</div>
                     <div className="col sold">{client.sold ? "+" : "-"}</div>
                     <div className="col">{client.owner}</div>
-                    {!this.props.update ? <img className="update" onClick={this.chooseClient} alt='update' src="https://cdn3.iconfinder.com/data/icons/web-document-icons/512/Edit_Document-512.png" /> : <img className="update" onClick={this.UpdateClient} alt='update' src="https://cdn3.iconfinder.com/data/icons/web-document-icons/512/Edit_Document-512.png" />}
+                    {!this.props.updateClient ? <img className="update" onClick={this.chooseClient} alt='update' src="https://cdn3.iconfinder.com/data/icons/web-document-icons/512/Edit_Document-512.png" /> : <img className="update" onClick={this.UpdateClient} alt='update' src="https://cdn3.iconfinder.com/data/icons/web-document-icons/512/Edit_Document-512.png" />}
                     
                 </div>
-
-                {this.state.update ? <UpdateClient client={client} exitUpdate={this.exitUpdate} update={this.props.update} deleteClient={this.props.deleteClient} /> : null}
+                
+                {this.state.update ? <UpdateClient client={client} exitUpdate={this.exitUpdate} updateClient={this.props.updateClient} deleteClient={this.props.deleteClient} /> : null}
             </div>
         );
     }

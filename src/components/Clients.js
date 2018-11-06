@@ -41,7 +41,7 @@ class Clients extends Component {
             for (let i = this.state.startClient; i <= this.state.endClient && this.props.clients[i]; i++) {
                 clients.push(this.props.clients[i])
             }
-            return (clients.map(c => { return (<Client key={c._id} client={c} update={this.props.update} chooseClient={false} deleteClient={this.props.deleteClient} />) }))
+            return (clients.map(c => { return (<Client key={c._id} client={c} updateClient={this.props.updateClient} chooseClient={false} deleteClient={this.props.deleteClient} />) }))
         }
         let filteredClients = this.props.clients
             .filter(c => c[this.state.searchBy].toLowerCase().includes(this.state.searchInput.toLowerCase()))
@@ -52,7 +52,7 @@ class Clients extends Component {
             return (
                 <div id="searchFinds">
                     {clients
-                        .map(c => { return (<Client key={c._id} client={c} update={this.props.update} chooseClient={false} deleteClient={this.props.deleteClient} />) })}
+                        .map(c => { return (<Client key={c._id} client={c} updateClient={this.props.updateClient} chooseClient={false} deleteClient={this.props.deleteClient} />) })}
                 </div>
             )
         } else {
@@ -78,7 +78,7 @@ class Clients extends Component {
                     <div className="col sold">Sold</div>
                     <div className="col">Owner</div>
                 </div>
-                {this.props.clients.length === 0 ? <Loading /> : null}
+                {/* {this.props.clients.length === 0 ? <Loading /> : null} */}
                 {this.displaySearchFindes()}
             </div>
         );

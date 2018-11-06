@@ -62,4 +62,25 @@ router.delete('/:clientID', function(req,res){
     })
 });
 
+router.put('', function(req, res){
+    let updatedClient = req.body
+    Client.update(
+        {
+            name: updatedClient.name,
+            email: updatedClient.email,
+            country: updatedClient.country,
+            emailType: updatedClient.emailType,
+            owner: updatedClient.owner,
+            sold: updatedClient.sold
+        },
+        {
+            where: {_id: updatedClient._id}
+        }
+    ).then(()=>{
+        Client.findAll({}).then((data)=>{
+            res.send(data)
+        })
+    })
+})
+
 module.exports = router

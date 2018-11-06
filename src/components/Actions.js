@@ -6,7 +6,7 @@ class Action extends Component {
     render() {
         return (
             <div className="Action">
-                <ActionUpdate clients={this.props.clients} />
+                <ActionUpdate clients={this.props.clients} updateClient={this.props.updateClient} />
                 <hr/>
                 <AddClient addClient={this.props.addClient} />
             </div>
